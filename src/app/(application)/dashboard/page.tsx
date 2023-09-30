@@ -1,3 +1,8 @@
+import TopBar from '@/components/application/TopBar'
+
 export default function Page() {
-return <button>TESTING</button>
+
+    return (
+        <p></p>
+    ) 
 }

@@ -1,19 +1,18 @@
+import TopBar from '@/components/application/TopBar'
+import NavDrawer from '@/components/general/NavDrawer'
 import { AppBar, Box, IconButton, Toolbar } from '@mui/material'
 
 export default function ApplicationLayout({children}: {children: React.ReactNode}) {
 
   return (
-    <Box
-      sx={{width: 1, height: 1, flexGrow: 1}}
-    >
-      <AppBar position='static'> 
-        <Toolbar>
-          {/* <IconButton><MenuIcon size="large" edge="start" color="inherit" aria-label="navigation menu" sx={{mr: 2}}/></IconButton> */}
-          <IconButton>test</IconButton>
-
-        </Toolbar>
-      </AppBar>
-
-    </Box>
+    <div id="application-container" className='w-full h-full flex flex-col'>
+      <TopBar />
+      <div className='flex h-full w-full'>
+        <NavDrawer />
+        <main>
+          { children }
+        </main>
+      </div>
+    </div>
   )
 }
