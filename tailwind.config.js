@@ -18,7 +18,7 @@ module.exports = {
         brand: '#ac3ae0',
         background: {
           light: '#fff',
-          dark: '#000'
+          dark: '#333333'
         }
       },
       borderRadius: {
