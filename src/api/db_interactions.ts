@@ -1,8 +1,16 @@
+import { Deck } from "@/types/schema_types";
 
-export const getDecks = async () => {
-	const decks = await fetch(`${process.env.BACKEND_URL}/decks`, {
-		headers: { Authorization: `Bearer ${await getToken()}` }
-	})
-	.then(data => data.json())
-	return decks
+/**
+ * Client Side
+ * @param newDeck Object containing a name string and description string
+ */
+export async function createDeck(newDeck: {name: string, description: string}, userToken: string): Promise<Deck> {
+
+	const deck: {deck: Deck} = await fetch(`${process.env.BACKEND_URL}/deck`, {
+		method: 'POST',
+		headers: { Authorization: `Bearer ${userToken}`, 'Content-Type': 'application/json'},
+		body: JSON.stringify(newDeck)
+	}).then(data => data.json())
+
+	return deck.deck
 }

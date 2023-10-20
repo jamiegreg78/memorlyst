@@ -1,4 +1,6 @@
+// TODO: Make a component for the list
 import { auth } from "@clerk/nextjs"
+import DeckList from '@/components/decks/DeckList'
 import type { Deck } from "@/types/schema_types"
 
 export default async function DecksPageLayout() {
@@ -9,8 +11,6 @@ export default async function DecksPageLayout() {
   }).then(data => data.json())
 
   return (
-    <div>
-      {decks.data.length > 0 && decks.data.map(deck => deck.name)}
-    </div>
+    <DeckList decks={decks.data}/>
   )
 }

@@ -14,6 +14,10 @@ module.exports = {
         sm: '0.5rem',
         md: '1rem'
       },
+      gap: {
+        sm: '0.5rem',
+        md: '1rem'
+      },
       colors: {
         brand: '#ac3ae0',
         background: {

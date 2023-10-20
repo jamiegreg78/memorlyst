@@ -8,7 +8,7 @@ export default function ApplicationLayout({children}: {children: React.ReactNode
         <NavDrawer />
         <div className='flex flex-col h-full w-full'>
           <TopBar />
-          <main className='grow h-full w-full'>
+          <main className='grow h-full w-full p-md'>
             { children }
           </main>
         </div>
